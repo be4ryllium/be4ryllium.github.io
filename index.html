@@ -17,22 +17,28 @@
 
         <style> /*-----------< WINDOWS >-------------*/
             .window {
-                border-radius: 5px;
+                border-radius: 10px;
                 border: 1px var(--window-border-color);
                 overflow: hidden;
 
                 height: 400px;
                 width: 750px;
+
+                position: absolute;
+                top: 250px;
+                left: 250px;
+                background-color: white;
             }
 
             .titlebar {
                 margin: 0;
                 width: 100%;
-                height: 15px;
+                height: 30px;
                 background-color: white;
                 display: flex;
                 align-items: center;
-                font-size: 10px;
+                font-size: 20px;
+                border-bottom: 1px var(--window-border-color);
             }
         </style>
     </head>
