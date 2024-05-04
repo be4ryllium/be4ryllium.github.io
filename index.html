@@ -5,20 +5,25 @@
 
         <style> /*------------< SETUP >------------*/
             :root {
-                --background-color: #dbeaec;
+                --background-color: #dbe4ec;
                 --window-border-color: #c7c7c7;
             }
 
             body {
                 color: black;
                 background-color: var(--background-color);
+                font-family: 'Times New Roman', Times, serif;
+
+                min-width: 100vw;
+                min-height: 100vh;
+                margin: 0;
             }
         </style>
 
         <style> /*-----------< WINDOWS >-------------*/
             .window {
-                border-radius: 10px;
-                border: 1px var(--window-border-color);
+                border-radius: 8px;
+                border: 1px var(--window-border-color) solid;
                 overflow: hidden;
 
                 height: 400px;
@@ -28,26 +33,140 @@
                 top: 250px;
                 left: 250px;
                 background-color: white;
+                box-shadow: 5px 5px 10px #00000067;
+
+                z-index: 0;
+
+                transition: ease 0.1s;
+                transition-property: box-shadow;
             }
 
             .titlebar {
                 margin: 0;
                 width: 100%;
-                height: 30px;
+                height: 20px;
                 background-color: white;
                 display: flex;
                 align-items: center;
-                font-size: 20px;
-                border-bottom: 1px var(--window-border-color);
+                font-size: 17px;
+                border-bottom: 1px var(--window-border-color) solid;
+                background-image: linear-gradient(to top, #ddebea, #ffffff);
+
+                user-select: none;
+                cursor: grab;
+            }
+
+            .titlebar img {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            .content {
+                position: absolute;
+                top: 21px;
+                left: 0;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            #scond {
+                display: none;
+            }
+
+            .close {
+                position: absolute;
+                right: 4px;
+                top: 2px;
+                height: 16px;
+                width: 16px;
+                background-color: #911212;
+                border: 1px #4d1e1e solid;
+                background-image: radial-gradient(circle at bottom left, #bb3737, #b61313);
+                border-radius: 50%;
             }
         </style>
     </head>
     <body>
         <div id="description" class="window">
             <div class="titlebar">
-                <img>
+                <img src="REAL_fishyfish_higherquality.png" width="15">
                 BE4RYLLIUM BE4RYLLIUM BE4RYLLIUM
+                <button class="close"></button>
+            </div>
+            <div class="content">
+                <h1>Welcome to my webstie!</h1>
+                <p>webstie of: be4ryllim</p>
             </div>
         </div>
+        <div id="scond" class="window">
+            <div class="titlebar">
+                <img src="REAL_fishyfish_higherquality.png" width="15">
+                BE4RYLLIUM second
+            </div>
+        </div>
+
+        <script>
+            const $ = (e) => {
+                if (e.charAt(0) == '.') {
+                    return document.getElementsByClassName(e.substr(1, e.length - 1))
+                } else if (e.charAt(0) == '#') {
+                    return document.getElementById(e.substr(1, e.length - 1))
+                }
+            };
+
+            var mouse_coords = [0, 0];
+            addEventListener('mousemove', (e) => {
+                mouse_coords[0] = e.clientX;
+                mouse_coords[1] = e.clientY;
+            })
+
+
+            const titlebars = $('.titlebar');
+            var currentbarheld = null;
+            var startmousedrag = [0, 0];
+            var starteledrag = [0, 0];
+            var biggestzindex = -1;
+
+            for (let titlebar of titlebars) {
+                console.log(titlebar)
+
+                titlebar.addEventListener('mousedown', () => {
+                    if (!currentbarheld) {
+                        currentbarheld = titlebar;
+                        startmousedrag = [mouse_coords[0], mouse_coords[1]];
+                        starteledrag = [titlebar.parentElement.offsetLeft, titlebar.parentElement.offsetTop]
+                        if (titlebar.parentElement.style.zIndex != biggestzindex || biggestzindex === 0) {
+                            biggestzindex += 1;
+                            titlebar.parentElement.style.zIndex = biggestzindex;
+                        }
+                        titlebar.style.cursor = 'grabbing';
+                        document.body.style.cursor = 'grabbing';
+                        titlebar.parentElement.style.boxShadow = '5px 5px 12px #00000090';
+                    }
+                })
+            }
+            addEventListener('mouseup', () => {
+                if (currentbarheld) {
+                    for (let titlebar of titlebars) {
+                        titlebar.style.cursor = 'grab';
+                    }
+                    document.body.style.cursor = 'default';
+                    starteledrag = [0, 0];
+                    startmousedrag = [0, 0];
+                    
+                    currentbarheld.parentElement.style.boxShadow = '5px 5px 10px #00000067'
+                    currentbarheld = null;
+                }
+            })
+
+            function frame() {
+                requestAnimationFrame(frame);
+                if (currentbarheld) {
+                    currentbarheld.parentElement.style.left = (mouse_coords[0] + starteledrag[0]) - startmousedrag[0] + 'px';
+                    currentbarheld.parentElement.style.top = (mouse_coords[1] + starteledrag[1]) - startmousedrag[1] + 'px';
+                }
+            }
+            frame();
+        </script>
     </body>
 </html>
