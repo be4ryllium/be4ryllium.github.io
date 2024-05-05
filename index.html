@@ -18,10 +18,21 @@
                 min-width: 100vw;
                 min-height: 100vh;
                 margin: 0;
+
+                background-image: url('92c72194b9d6c3108ed7a5249f042b94.jpg');
+            }
+
+            img {
+                pointer-events: none;
             }
         </style>
 
         <style> /*-----------< WINDOWS >-------------*/
+            #windows {
+                z-index: 1;
+                position: absolute;
+            }
+
             .window {
                 border-radius: 8px;
                 border: 1px var(--window-border-color) solid;
@@ -38,12 +49,18 @@
 
                 z-index: 0;
 
-                transition: ease 0.1s;
-                transition-property: box-shadow;
+                filter: contrast(1);
+                transform: scale(1);
+                opacity: 1;
+
+                transition: ease 0.15s;
+                transition-property: box-shadow, transform, filter, opacity;
             }
 
             .titlebar {
-                margin: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
                 width: 100%;
                 height: 20px;
                 background-color: white;
@@ -74,36 +91,147 @@
                 display: none;
             }
 
-            .close {
+            .windowbuttoncontainer {
                 position: absolute;
-                right: 4px;
+                right: 2px;
                 top: 2px;
                 height: 16px;
+                display: flex;
+                justify-content: right;
+                z-index: 10;
+            }
+
+            .windowbuttoncontainer button {
+                margin: 0;
+                margin-right: 3px;
+                height: 16px;
                 width: 16px;
+                border-radius: 50%;
+                padding: 0;
+                align-items: center;
+                cursor: pointer;
+            }
+            .windowbuttoncontainer button:hover {
+                filter: brightness(1.1) contrast(1.1);
+            }
+
+            .close {
                 background-color: #911212;
                 border: 1px #4d1e1e solid;
                 background-image: radial-gradient(circle at bottom left, #bb3737, #b61313);
-                border-radius: 50%;
+            }
+            .windowed {
+                background-color: #911212;
+                border: 1px #a58d21 solid;
+                background-image: radial-gradient(circle at bottom left, #bba337, #dfcb1b);
+            }
+            .minimize {
+                background-color: #911212;
+                border: 1px #285292 solid;
+                background-image: radial-gradient(circle at bottom left, #2a7420, #2ba812);
+            }
+
+            .windowdrag {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 5;
+            }
+        </style>
+
+        <style> /*-----------< DESKTOP >-------------*/
+            #desktop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            #desktop button {
+                position: absolute;
+                background-color: transparent;
+                border: none;
+                top: 100px;
+                left: 100px;
+                width: 85px;
+                height: 90px;
+                border-radius: 2px;
+                padding: 0;
+            }
+            
+            #desktop button:hover:not(.clickedbutton) {
+                background-image: radial-gradient(circle at bottom left, #e6db7d7e, #f7e7095e);
+                border: 1px #cac16d solid !important;
+            }
+            .clickedbutton {
+                background-image: radial-gradient(circle at bottom left, #e6db7d8e, #f7e7097e);
+                border: 1px #cac16d solid !important;
+            }
+            .clickedbutton:hover {
+                background-image: radial-gradient(circle at bottom left, #e6db7da7, #f7e70997);
+                border: 1px #cac16d solid !important;
+            }
+
+            #desktop button img {
+                width: 50px;
+                height: 50px;
+                filter: drop-shadow(0px 1px 1px #00000098);
+            }
+
+            #desktop button p {
+                margin-top: 5px;
+                margin-bottom: 0;
+                color: white;
+                text-shadow: 0px 1px 2px #000000, 0px 1px 2px #000000, 0px 0px 2px #000000, 0px 1px 1px #000000, 0px 1px 1px #000000, 0px 1px 1px #000000;
+            }
+
+            #background {
+                z-index: -1000;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
             }
         </style>
     </head>
     <body>
-        <div id="description" class="window">
-            <div class="titlebar">
-                <img src="REAL_fishyfish_higherquality.png" width="15">
-                BE4RYLLIUM BE4RYLLIUM BE4RYLLIUM
-                <button class="close"></button>
+        <div id="windows">
+            <div id="description" class="window">
+                <div class="titlebar">
+                    <img src="REAL_fishyfish_higherquality.png" width="15">
+                    BE4RYLLIUM BE4RYLLIUM BE4RYLLIUM
+                    <div class="windowdrag"></div>
+                    <div class="windowbuttoncontainer">
+                        <button class="minimize"></button>
+                        <button class="windowed"></button>
+                        <button class="close"></button>
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>Welcome to my webstie!</h1>
+                    <p>webstie of: be4ryllim</p>
+                    <img src="REAL_fishyfish_higherquality copy.png" height="250">
+                </div>
             </div>
-            <div class="content">
-                <h1>Welcome to my webstie!</h1>
-                <p>webstie of: be4ryllim</p>
+            <div id="scond" class="window">
+                <div class="titlebar">
+                    <img src="REAL_fishyfish_higherquality.png" width="15">
+                    BE4RYLLIUM second
+                </div>
             </div>
         </div>
-        <div id="scond" class="window">
-            <div class="titlebar">
-                <img src="REAL_fishyfish_higherquality.png" width="15">
-                BE4RYLLIUM second
-            </div>
+
+        <div id="desktop">
+            <div id="background"></div>
+            <button thing="description">
+                <img src="REAL_fishyfish_higherquality.png">
+                <p>welcome.exe</p>
+            </button>
         </div>
 
         <script>
@@ -121,28 +249,37 @@
                 mouse_coords[1] = e.clientY;
             })
 
-
-            const titlebars = $('.titlebar');
+            const windows = $('.window');
+            for (let w of windows) {
+                w.style.display = 'none';
+                w.style.opacity = '0';
+                w.style.filter = 'contrast(0.5)';
+                w.style.transform = 'scale(0.95)';
+            }
+            
+            
+            const titlebars = $('.windowdrag');
             var currentbarheld = null;
             var startmousedrag = [0, 0];
             var starteledrag = [0, 0];
             var biggestzindex = -1;
-
+            var overwrite = false;
+            
             for (let titlebar of titlebars) {
                 console.log(titlebar)
-
+                
                 titlebar.addEventListener('mousedown', () => {
                     if (!currentbarheld) {
                         currentbarheld = titlebar;
                         startmousedrag = [mouse_coords[0], mouse_coords[1]];
-                        starteledrag = [titlebar.parentElement.offsetLeft, titlebar.parentElement.offsetTop]
-                        if (titlebar.parentElement.style.zIndex != biggestzindex || biggestzindex === 0) {
+                        starteledrag = [titlebar.parentElement.parentElement.offsetLeft, titlebar.parentElement.parentElement.offsetTop]
+                        if (titlebar.parentElement.parentElement.style.zIndex != biggestzindex || biggestzindex === 0) {
                             biggestzindex += 1;
-                            titlebar.parentElement.style.zIndex = biggestzindex;
+                            titlebar.parentElement.parentElement.style.zIndex = biggestzindex;
                         }
                         titlebar.style.cursor = 'grabbing';
                         document.body.style.cursor = 'grabbing';
-                        titlebar.parentElement.style.boxShadow = '5px 5px 12px #00000090';
+                        titlebar.parentElement.parentElement.style.boxShadow = '5px 5px 12px #00000090';
                     }
                 })
             }
@@ -155,19 +292,68 @@
                     starteledrag = [0, 0];
                     startmousedrag = [0, 0];
                     
-                    currentbarheld.parentElement.style.boxShadow = '5px 5px 10px #00000067'
+                    currentbarheld.parentElement.parentElement.style.boxShadow = '5px 5px 10px #00000067'
                     currentbarheld = null;
                 }
             })
-
+            
+            const buttoncontainers = $('.windowbuttoncontainer');
+            for (let bc of buttoncontainers) {
+                bc.getElementsByClassName('close')[0].addEventListener('click', () => {
+                    const w = bc.parentElement.parentElement;
+                    w.style.opacity = '0';
+                    w.style.filter = 'contrast(0.5)';
+                    w.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        w.style.display = 'none';
+                    }, 150)
+                })
+            }
+            
+            var selectedicons = [];
+            const desktopbuttons = $('#desktop').getElementsByTagName('button');
+            for (let button of desktopbuttons) {
+                button.addEventListener('mousedown', () => {
+                    for (let otherbutton of selectedicons) {
+                        otherbutton.className = ''
+                    }
+                    button.className = 'clickedbutton';
+                    selectedicons = [button]
+                    if (button.ready) {
+                        button.ready = null;
+                        console.log(button.getAttribute('thing'))
+                        const w = $('#' + button.getAttribute('thing'));
+                        w.style.display = 'block';
+                        setTimeout(() => {
+                            w.style.opacity = '1';
+                            w.style.filter = 'contrast(1)';
+                            w.style.transform = 'scale(1)';
+                        }, 1)
+                    } else {
+                        button.ready = true;
+                        setTimeout(() => {
+                            button.ready = null;
+                        }, 500)
+                    }
+                })
+            }
+            $('#background').addEventListener('mousedown', (e) => {
+                console.log('sdgergererger')
+                for (let otherbutton of selectedicons) {
+                    otherbutton.className = ''
+                }
+                selectedicons = [];
+            })
+            
+            
             function frame() {
                 requestAnimationFrame(frame);
                 if (currentbarheld) {
-                    currentbarheld.parentElement.style.left = (mouse_coords[0] + starteledrag[0]) - startmousedrag[0] + 'px';
-                    currentbarheld.parentElement.style.top = (mouse_coords[1] + starteledrag[1]) - startmousedrag[1] + 'px';
+                    currentbarheld.parentElement.parentElement.style.left = (mouse_coords[0] + starteledrag[0]) - startmousedrag[0] + 'px';
+                    currentbarheld.parentElement.parentElement.style.top = (mouse_coords[1] + starteledrag[1]) - startmousedrag[1] + 'px';
                 }
             }
             frame();
-        </script>
+            </script>
     </body>
-</html>
+    </html>
