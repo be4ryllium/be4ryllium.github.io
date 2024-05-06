@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>be4ryllium be4ryllium be4ryllium</title>
+        <title>be4rylliumOS</title>
         <link rel="icon" type="image/x-icon" href="REAL_fishyfish_higherquality.png">
 
         <style> /*------------< SETUP >------------*/
@@ -20,6 +20,8 @@
                 margin: 0;
 
                 background-image: url('92c72194b9d6c3108ed7a5249f042b94.jpg');
+
+                overflow: hidden;
             }
 
             img {
@@ -85,6 +87,9 @@
                 left: 0;
                 padding-left: 10px;
                 padding-right: 10px;
+                overflow: scroll;
+                width: 100%;
+                height: 100%;
             }
 
             #scond {
@@ -158,24 +163,35 @@
                 top: 100px;
                 left: 100px;
                 width: 85px;
-                height: 90px;
+                height: fit-content;
+                min-height: 90px;
                 border-radius: 2px;
                 padding: 0;
+                padding-bottom: 5px;
+                padding-top: 5px;
             }
             
             #desktop button:hover:not(.clickedbutton) {
                 background-image: radial-gradient(circle at bottom left, #e6db7d7e, #f7e7095e);
                 border: 1px #cac16d solid !important;
+
+                padding-top: 4px;
+                padding-bottom: 4px;
             }
             .clickedbutton {
                 background-image: radial-gradient(circle at bottom left, #e6db7d8e, #f7e7097e);
                 border: 1px #cac16d solid !important;
+
+                padding-top: 4px !important;
+                padding-bottom: 4px !important;
             }
             .clickedbutton:hover {
                 background-image: radial-gradient(circle at bottom left, #e6db7da7, #f7e70997);
                 border: 1px #cac16d solid !important;
-            }
 
+                padding-top: 4px !important;
+                padding-bottom: 4px !important;
+            }
             #desktop button img {
                 width: 50px;
                 height: 50px;
@@ -187,6 +203,8 @@
                 margin-bottom: 0;
                 color: white;
                 text-shadow: 0px 1px 2px #000000, 0px 1px 2px #000000, 0px 0px 2px #000000, 0px 1px 1px #000000, 0px 1px 1px #000000, 0px 1px 1px #000000;
+                text-wrap: wrap;
+                word-break: break-word;
             }
 
             #background {
@@ -198,26 +216,26 @@
                 left: 0;
             }
 
-            #desktophighlight {
+            #mousebox {
                 z-index: 100;
                 border: 1px #cac16d solid;
-                background-color: #ffde2381;
+                background-color: transparent;
                 position: absolute;
+                background-image: radial-gradient(circle at bottom left, #ffd5196e, #c0ae0c54);
+
+                /*box-shadow: 4px 4px 6px #0000007c;*/
             }
         </style>
     </head>
     <body>
         <div id="windows">
+
+            
+
             <div id="description" class="window">
                 <div class="titlebar">
                     <img src="REAL_fishyfish_higherquality.png" width="15">
                     BE4RYLLIUM BE4RYLLIUM BE4RYLLIUM
-                    <div class="windowdrag"></div>
-                    <div class="windowbuttoncontainer">
-                        <button class="minimize"></button>
-                        <button class="windowed"></button>
-                        <button class="close"></button>
-                    </div>
                 </div>
                 <div class="content">
                     <h1>Welcome to my webstie!</h1>
@@ -225,21 +243,75 @@
                     <img src="REAL_fishyfish_higherquality copy.png" height="250">
                 </div>
             </div>
+
             <div id="scond" class="window">
                 <div class="titlebar">
                     <img src="REAL_fishyfish_higherquality.png" width="15">
-                    BE4RYLLIUM second
+                    92c72194b9d6c3108ed7a5249f042b94.jpg
+                </div>
+                <div class="content">
+                    <h1>this is</h1>
+                    <p>the imgage</p>
+                    <img src="92c72194b9d6c3108ed7a5249f042b94.jpg" height="250">
                 </div>
             </div>
+
+            <div id="whoami" class="window">
+                <div class="titlebar">
+                    <img src="REAL_fishyfish_higherquality.png" width="15">
+                    who is be4ryllium&lt;
+                </div>
+                <div class="content">
+                    <h1>HI my name is</h1>
+                    <p>
+                        be4ryllium.
+                        <br><br>
+                        I am a pro gamer on <a href="https://www.roblox.com/users/215127532/profile" target="_blank">roblox</a>
+                        <br><br>
+                        <img src="Screenshot_785.png" width="350">
+                        <br><br>
+                        and on <a href="https://namemc.com/profile/be4ryllium.1" target="_blank">Minecraft</a>
+                        <br><br>
+                        <p><img src="Screenshot 2024-05-05 at 18-16-03 be4ryllium Minecraft Profile.png">Screenshot 2024-05-05 at 18-16-03 be4ryllium Minecraft Profile.png</p>
+                        <br><br>
+                        and on <a href="https://classic.animaljam.com/en" target="_blank">animal jam</a>
+                        <br><br>
+                        <img src="Screenshot_786.png" width="500">
+                        <br><br>
+                        I enjoy to play games and have fun!
+                        <br><br>
+                        ik kom van de straat
+                    </p>
+                </div>
+            </div>
+
+
+
         </div>
+
+        <script>
+            for (let titlebar of document.getElementsByClassName('titlebar')) {
+                titlebar.innerHTML += '<div class="windowdrag"></div><div class="windowbuttoncontainer"><button class="minimize"></button><button class="windowed"></button><button class="close"></button></div>';
+            }
+        </script>
 
         <div id="desktop">
             <div id="background"></div>
-            <button thing="description">
+
+            <button thing="description" style="top: 250px; left: 250px;">
                 <img src="REAL_fishyfish_higherquality.png">
                 <p>welcome.exe</p>
             </button>
-            <div id="desktophighlight"></div>
+            <button thing="scond" style="top: 322px; left: 512px;">
+                <img src="92c72194b9d6c3108ed7a5249f042b94.jpg">
+                <p>92c72194b9d6c3108ed7a5249f042b94.jpg</p>
+            </button>
+            <button thing="whoami" style="top: 500px; left: 467px;">
+                <img src="bungy.png">
+                <p>who_am_i.pdf</p>
+            </button>
+
+            <div id="mousebox"></div>
         </div>
 
         <script>
@@ -251,18 +323,90 @@
                 }
             };
 
+            const mousebox = $('#mousebox');
+            var mbox_start = [0, 0];
+            var mbox_end = [0, 0];
+            var mbox_enabled = false;
+
+            var selectedicons = [];
+
+            const desktopbuttons = $('#desktop').getElementsByTagName('button');
+            
             var mouse_coords = [0, 0];
             addEventListener('mousemove', (e) => {
-                mouse_coords[0] = e.clientX;
-                mouse_coords[1] = e.clientY;
+                mouse_coords = [e.clientX, e.clientY]
+                mbox_end = [e.clientX, e.clientY]
+
+                var xgradient = '';
+                var ygradient = '';
+
+                var top_left = [0, 0];
+                var bottom_right = [0, 0];
+
+                if (mbox_enabled) {
+                    if (mbox_start[0] < mbox_end[0]) {
+                        mousebox.style.left = `${mbox_start[0]}px`;
+                        mousebox.style.width = `${Math.abs(mbox_start[0] - mbox_end[0]) - 1}px`;
+                        xgradient = 'left'
+
+                        top_left[0] = mbox_start[0];
+                        bottom_right[0] = mbox_end[0];
+                    } else {
+                        mousebox.style.left = `${mbox_end[0]}px`;
+                        mousebox.style.width = `${Math.abs(mbox_start[0] - mbox_end[0])}px`;
+                        xgradient = 'right'
+
+                        top_left[0] = mbox_end[0];
+                        bottom_right[0] = mbox_start[0];
+                    }
+                    if (mbox_start[1] < mbox_end[1]) {
+                        mousebox.style.top = `${mbox_start[1]}px`;
+                        mousebox.style.height = `${Math.abs(mbox_start[1] - mbox_end[1]) - 1}px`;
+                        ygradient = 'top';
+
+                        top_left[1] = mbox_start[1];
+                        bottom_right[1] = mbox_end[1];
+                    } else {
+                        mousebox.style.top = `${mbox_end[1]}px`;
+                        mousebox.style.height = `${Math.abs(mbox_start[1] - mbox_end[1])}px`;
+                        ygradient = 'bottom';
+
+                        top_left[1] = mbox_end[1];
+                        bottom_right[1] = mbox_start[1];
+                    }
+
+                    mousebox.style.backgroundImage = `radial-gradient(circle at ${ygradient} ${xgradient}, #ffd5196e, #c0ae0c54)`;
+                    
+                    for (let si of selectedicons) {
+                        si.className = '';
+                    }
+                    selectedicons = [];
+
+                    for (let b of desktopbuttons) {
+                        var b_center = [b.offsetLeft + b.offsetWidth / 2, b.offsetTop + b.offsetHeight / 2]
+                        if (b_center[0] + 15 >= top_left[0] && b_center[0] - 15 <= bottom_right[0] &&
+                            b_center[1] + 15 >= top_left[1] && b_center[1] - 15 <= bottom_right[1]) {
+                                selectedicons.push(b);
+                                b.className = 'clickedbutton'
+                        }
+                    }
+                }
             })
 
             const windows = $('.window');
+            var biggestzindex = -1;
             for (let w of windows) {
                 w.style.display = 'none';
                 w.style.opacity = '0';
                 w.style.filter = 'contrast(0.5)';
                 w.style.transform = 'scale(0.95)';
+
+                w.addEventListener('mousedown', () => {
+                    if (w.style.zIndex != biggestzindex || biggestzindex === 0) {
+                        biggestzindex += 1;
+                        w.style.zIndex = biggestzindex;
+                    }
+                })
             }
             
             
@@ -270,7 +414,6 @@
             var currentbarheld = null;
             var startmousedrag = [0, 0];
             var starteledrag = [0, 0];
-            var biggestzindex = -1;
             var overwrite = false;
             
             for (let titlebar of titlebars) {
@@ -281,10 +424,6 @@
                         currentbarheld = titlebar;
                         startmousedrag = [mouse_coords[0], mouse_coords[1]];
                         starteledrag = [titlebar.parentElement.parentElement.offsetLeft, titlebar.parentElement.parentElement.offsetTop]
-                        if (titlebar.parentElement.parentElement.style.zIndex != biggestzindex || biggestzindex === 0) {
-                            biggestzindex += 1;
-                            titlebar.parentElement.parentElement.style.zIndex = biggestzindex;
-                        }
                         titlebar.style.cursor = 'grabbing';
                         document.body.style.cursor = 'grabbing';
                         titlebar.parentElement.parentElement.style.boxShadow = '5px 5px 12px #00000090';
@@ -303,6 +442,8 @@
                     currentbarheld.parentElement.parentElement.style.boxShadow = '5px 5px 10px #00000067'
                     currentbarheld = null;
                 }
+                mbox_enabled = false;
+                mousebox.style.display = 'none';
             })
             
             const buttoncontainers = $('.windowbuttoncontainer');
@@ -318,15 +459,22 @@
                 })
             }
             
-            var selectedicons = [];
-            const desktopbuttons = $('#desktop').getElementsByTagName('button');
             for (let button of desktopbuttons) {
                 button.addEventListener('mousedown', () => {
+                    var is_in = false;
                     for (let otherbutton of selectedicons) {
-                        otherbutton.className = ''
+                        if (otherbutton === button) {
+                            is_in = true;
+                            break;
+                        }
+                    }
+                    if (!is_in) {
+                        for (let otherbutton of selectedicons) {
+                            otherbutton.className = ''
+                        }
+                        selectedicons = [button]
                     }
                     button.className = 'clickedbutton';
-                    selectedicons = [button]
                     if (button.ready) {
                         button.ready = null;
                         console.log(button.getAttribute('thing'))
@@ -345,14 +493,20 @@
                     }
                 })
             }
-            $('#background').addEventListener('mousedown', (e) => {
-                console.log('sdgergererger')
+            const background = $('#background');
+            background.addEventListener('mousedown', () => {
                 for (let otherbutton of selectedicons) {
                     otherbutton.className = ''
                 }
                 selectedicons = [];
+
+                mbox_enabled = true;
+                mbox_start = [mouse_coords[0], mouse_coords[1]];
+                mousebox.style.display = 'block';
+                mousebox.style.width = '0';
+                mousebox.style.height = '0';
             })
-            
+
             
             function frame() {
                 requestAnimationFrame(frame);
