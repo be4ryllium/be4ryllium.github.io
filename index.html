@@ -370,18 +370,21 @@
             
             const desktopbuttons = document.getElementById('desktop').getElementsByTagName('button');
             const clonecontainer = document.getElementById('clones');
-            
-            var icon_positions = localStorage.getItem('iconpositions');
 
-            function update_icon_positions() {
-                icon_positions = {};
-                for (let button of desktopbuttons) {
-                    icon_positions[button.getAttribute('thing')] = [button.offsetLeft, button.offsetTop];
-                }
-                localStorage.setItem('iconpositions', icon_positions);
+            function update_icon_position(button) {
+                localStorage.setItem(button.getAttribute('thing') + "!left", button.style.left);
+                localStorage.setItem(button.getAttribute('thing') + "!top", button.style.top);
             }
-            if (!icon_positions) {
-                update_icon_positions();
+
+            for (let button of desktopbuttons) {
+                let the_left = localStorage.getItem(button.getAttribute('thing') + '!left');
+                let the_top = localStorage.getItem(button.getAttribute('thing') + '!top');
+                if (the_left) {
+                    button.style.top = the_top;
+                    button.style.left = the_left;
+                } else {
+                    update_icon_position(button);
+                }
             }
 
             var mouse_coords = [0, 0];
@@ -484,9 +487,9 @@
                     for (let clone of clonecontainer.children) {
                         clone.origin.style.top = clone.style.top;
                         clone.origin.style.left = clone.style.left;
+                        update_icon_position(clone.origin);
                     }
                     clonecontainer.innerHTML = '';
-                    update_icon_positions();
                 }
                 selectedicons.forEach(e => {
                     e.dragging = null;
