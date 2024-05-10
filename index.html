@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head> <!--------------------------- HEADLAND ----------------------------->
         <title>be4rylliumOS</title>
         <link rel="icon" type="image/x-icon" href="REAL_fishyfish_higherquality.png">
 
@@ -230,96 +230,108 @@
 
                 /*box-shadow: 4px 4px 6px #0000007c;*/
             }
+
+            .iconclone {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+            .iconclone * {
+                box-shadow: none;
+            }
         </style>
     </head>
-    <body>
-        <div id="windows">
+    <body> <!----------------------- BODY -------------------------->
+        <div> <!------------------ HTML STUFF ---------------------->
+            <div id="windows">
 
-            
+                
 
-            <div id="description" class="window">
-                <div class="titlebar">
-                    <img src="REAL_fishyfish_higherquality.png" width="15">
-                    BE4RYLLIUM BE4RYLLIUM BE4RYLLIUM
+                <div id="description" class="window">
+                    <div class="titlebar">
+                        <img src="REAL_fishyfish_higherquality.png" width="15">
+                        BE4RYLLIUM BE4RYLLIUM BE4RYLLIUM
+                    </div>
+                    <div class="content">
+                        <h1>Welcome to my webstie!</h1>
+                        <p>webstie of: be4ryllim</p>
+                        <img src="REAL_fishyfish_higherquality copy.png" height="250">
+                    </div>
                 </div>
-                <div class="content">
-                    <h1>Welcome to my webstie!</h1>
-                    <p>webstie of: be4ryllim</p>
-                    <img src="REAL_fishyfish_higherquality copy.png" height="250">
+
+                <div id="scond" class="window">
+                    <div class="titlebar">
+                        <img src="REAL_fishyfish_higherquality.png" width="15">
+                        92c72194b9d6c3108ed7a5249f042b94.jpg
+                    </div>
+                    <div class="content">
+                        <h1>this is</h1>
+                        <p>the imgage</p>
+                        <img src="92c72194b9d6c3108ed7a5249f042b94.jpg" height="250">
+                    </div>
                 </div>
+
+                <div id="whoami" class="window">
+                    <div class="titlebar">
+                        <img src="REAL_fishyfish_higherquality.png" width="15">
+                        who is be4ryllium&lt;
+                    </div>
+                    <div class="content">
+                        <h1>HI my name is</h1>
+                        <p>
+                            be4ryllium.
+                            <br><br>
+                            I am a pro gamer on <a href="https://www.roblox.com/users/215127532/profile" target="_blank">roblox</a>
+                            <br><br>
+                            <img src="Screenshot_785.png" width="350">
+                            <br><br>
+                            and on <a href="https://namemc.com/profile/be4ryllium.1" target="_blank">Minecraft</a>
+                            <br><br>
+                            <p><img src="Screenshot 2024-05-05 at 18-16-03 be4ryllium Minecraft Profile.png">Screenshot 2024-05-05 at 18-16-03 be4ryllium Minecraft Profile.png</p>
+                            <br><br>
+                            and on <a href="https://classic.animaljam.com/en" target="_blank">animal jam</a>
+                            <br><br>
+                            <img src="Screenshot_786.png" width="500">
+                            <br><br>
+                            I enjoy to play games and have fun!
+                            <br><br>
+                            ik kom van de straat
+                        </p>
+                    </div>
+                </div>
+
+
+
             </div>
 
-            <div id="scond" class="window">
-                <div class="titlebar">
-                    <img src="REAL_fishyfish_higherquality.png" width="15">
-                    92c72194b9d6c3108ed7a5249f042b94.jpg
-                </div>
-                <div class="content">
-                    <h1>this is</h1>
-                    <p>the imgage</p>
-                    <img src="92c72194b9d6c3108ed7a5249f042b94.jpg" height="250">
-                </div>
+            <script>
+                for (let titlebar of document.getElementsByClassName('titlebar')) {
+                    titlebar.innerHTML += '<div class="windowdrag"></div><div class="windowbuttoncontainer"><button class="minimize"></button><button class="windowed"></button><button class="close"></button></div>';
+                }
+            </script>
+
+            <div id="desktop">
+                <div id="background"></div>
+
+                <button thing="description" style="top: 250px; left: 250px;">
+                    <img src="REAL_fishyfish_higherquality.png">
+                    <p>welcome.exe</p>
+                </button>
+                <button thing="scond" style="top: 322px; left: 512px;">
+                    <img src="92c72194b9d6c3108ed7a5249f042b94.jpg">
+                    <p>92c72194b9d6c3108ed7a5249f042b94.jpg</p>
+                </button>
+                <button thing="whoami" style="top: 500px; left: 467px;">
+                    <img src="bungy.png">
+                    <p>who_am_i.pdf</p>
+                </button>
+
+
+                <div id="clones"></div>
+                <div id="mousebox"></div>
             </div>
-
-            <div id="whoami" class="window">
-                <div class="titlebar">
-                    <img src="REAL_fishyfish_higherquality.png" width="15">
-                    who is be4ryllium&lt;
-                </div>
-                <div class="content">
-                    <h1>HI my name is</h1>
-                    <p>
-                        be4ryllium.
-                        <br><br>
-                        I am a pro gamer on <a href="https://www.roblox.com/users/215127532/profile" target="_blank">roblox</a>
-                        <br><br>
-                        <img src="Screenshot_785.png" width="350">
-                        <br><br>
-                        and on <a href="https://namemc.com/profile/be4ryllium.1" target="_blank">Minecraft</a>
-                        <br><br>
-                        <p><img src="Screenshot 2024-05-05 at 18-16-03 be4ryllium Minecraft Profile.png">Screenshot 2024-05-05 at 18-16-03 be4ryllium Minecraft Profile.png</p>
-                        <br><br>
-                        and on <a href="https://classic.animaljam.com/en" target="_blank">animal jam</a>
-                        <br><br>
-                        <img src="Screenshot_786.png" width="500">
-                        <br><br>
-                        I enjoy to play games and have fun!
-                        <br><br>
-                        ik kom van de straat
-                    </p>
-                </div>
-            </div>
-
-
-
         </div>
 
-        <script>
-            for (let titlebar of document.getElementsByClassName('titlebar')) {
-                titlebar.innerHTML += '<div class="windowdrag"></div><div class="windowbuttoncontainer"><button class="minimize"></button><button class="windowed"></button><button class="close"></button></div>';
-            }
-        </script>
-
-        <div id="desktop">
-            <div id="background"></div>
-
-            <button thing="description" style="top: 250px; left: 250px;">
-                <img src="REAL_fishyfish_higherquality.png">
-                <p>welcome.exe</p>
-            </button>
-            <button thing="scond" style="top: 322px; left: 512px;">
-                <img src="92c72194b9d6c3108ed7a5249f042b94.jpg">
-                <p>92c72194b9d6c3108ed7a5249f042b94.jpg</p>
-            </button>
-            <button thing="whoami" style="top: 500px; left: 467px;">
-                <img src="bungy.png">
-                <p>who_am_i.pdf</p>
-            </button>
-
-            <div id="mousebox"></div>
-        </div>
-
-        <script>
+        <script> //------------------- SCRIPT LAND -------------------//
             const $ = (e) => {
                 if (e.charAt(0) == '.') {
                     return document.getElementsByClassName(e.substr(1, e.length - 1))
@@ -327,40 +339,79 @@
                     return document.getElementById(e.substr(1, e.length - 1))
                 }
             };
+            
+            function open_window(button) {
+                const w = document.getElementById(button.getAttribute('thing'));
+                w.style.display = 'block';
+                setTimeout(() => {
+                    w.style.opacity = '1';
+                    w.style.filter = 'contrast(1)';
+                    w.style.transform = 'scale(1)';
+                }, 10)
+            }
 
-            const mousebox = $('#mousebox');
+            const titlebars = document.getElementsByClassName('windowdrag');
+            var currentbarheld = null;
+            var startmousedrag = [0, 0];
+            var starteledrag = [0, 0];
+            var overwrite = false;
+            
+            var actually_dragging = false;
+            
+            const mousebox = document.getElementById('mousebox');
             var mbox_start = [0, 0];
             var mbox_end = [0, 0];
             var mbox_enabled = false;
-
-            var selectedicons = [];
-
-            const desktopbuttons = $('#desktop').getElementsByTagName('button');
             
+            var selectedicons = [];
+            var icondrag = false;
+            
+            var cancel = false;
+            
+            const desktopbuttons = document.getElementById('desktop').getElementsByTagName('button');
+            const clonecontainer = document.getElementById('clones');
+            
+            var icon_positions = localStorage.getItem('iconpositions');
+
+            function update_icon_positions() {
+                icon_positions = {};
+                for (let button of desktopbuttons) {
+                    icon_positions[button.getAttribute('thing')] = [button.offsetLeft, button.offsetTop];
+                }
+                localStorage.setItem('iconpositions', icon_positions);
+            }
+            if (!icon_positions) {
+                update_icon_positions();
+            }
+
             var mouse_coords = [0, 0];
-            addEventListener('mousemove', (e) => {
+            addEventListener('mousedown', () => {
+                startmousedrag = [mouse_coords[0], mouse_coords[1]];
+            })
+            addEventListener('mousemove', (e) => { // ANYTHING WITH MOUSEMOVE
                 mouse_coords = [e.clientX, e.clientY]
                 mbox_end = [e.clientX, e.clientY]
-
+                
                 var xgradient = '';
                 var ygradient = '';
-
+                
                 var top_left = [0, 0];
                 var bottom_right = [0, 0];
-
+                
                 if (mbox_enabled) {
+                    icondrag = false;
                     if (mbox_start[0] < mbox_end[0]) {
                         mousebox.style.left = `${mbox_start[0]}px`;
                         mousebox.style.width = `${Math.abs(mbox_start[0] - mbox_end[0]) - 1}px`;
                         xgradient = 'left'
-
+                        
                         top_left[0] = mbox_start[0];
                         bottom_right[0] = mbox_end[0];
                     } else {
                         mousebox.style.left = `${mbox_end[0]}px`;
                         mousebox.style.width = `${Math.abs(mbox_start[0] - mbox_end[0])}px`;
                         xgradient = 'right'
-
+                        
                         top_left[0] = mbox_end[0];
                         bottom_right[0] = mbox_start[0];
                     }
@@ -368,74 +419,53 @@
                         mousebox.style.top = `${mbox_start[1]}px`;
                         mousebox.style.height = `${Math.abs(mbox_start[1] - mbox_end[1]) - 1}px`;
                         ygradient = 'top';
-
+                        
                         top_left[1] = mbox_start[1];
                         bottom_right[1] = mbox_end[1];
                     } else {
                         mousebox.style.top = `${mbox_end[1]}px`;
                         mousebox.style.height = `${Math.abs(mbox_start[1] - mbox_end[1])}px`;
                         ygradient = 'bottom';
-
+                        
                         top_left[1] = mbox_end[1];
                         bottom_right[1] = mbox_start[1];
                     }
-
+                    
                     mousebox.style.backgroundImage = `radial-gradient(circle at ${ygradient} ${xgradient}, #ffd5196e, #c0ae0c54)`;
                     
                     for (let si of selectedicons) {
                         si.className = '';
                     }
                     selectedicons = [];
-
+                    
                     for (let b of desktopbuttons) {
                         var b_center = [b.offsetLeft + b.offsetWidth / 2, b.offsetTop + b.offsetHeight / 2]
                         if (b_center[0] + 15 >= top_left[0] && b_center[0] - 15 <= bottom_right[0] &&
-                            b_center[1] + 15 >= top_left[1] && b_center[1] - 15 <= bottom_right[1]) {
-                                selectedicons.push(b);
-                                b.className = 'clickedbutton'
+                        b_center[1] + 15 >= top_left[1] && b_center[1] - 15 <= bottom_right[1]) {
+                            selectedicons.push(b);
+                            b.className = 'clickedbutton'
                         }
+                    }
+
+                } else if (icondrag) { //          ------------------ DRAGGING ICONS
+                    selectedicons.forEach(e => {
+                        if (!e.dragging) {
+                            e.cancel = true;
+                            e.dragging = true;
+
+                            const clone = e.cloneNode(true)
+                            clone.className = 'iconclone';
+                            clone.origin = e;
+                            clonecontainer.appendChild(clone);
+                        }
+                    });
+                    for (let e of document.getElementsByClassName('iconclone')) {
+                        e.style.left = `${mouse_coords[0] + e.origin.offsetLeft - startmousedrag[0]}px`;
+                        e.style.top = `${mouse_coords[1] + e.origin.offsetTop - startmousedrag[1]}px`;
                     }
                 }
             })
-
-            const windows = $('.window');
-            var biggestzindex = -1;
-            for (let w of windows) {
-                w.style.display = 'none';
-                w.style.opacity = '0';
-                w.style.filter = 'contrast(0.5)';
-                w.style.transform = 'scale(0.95)';
-
-                w.addEventListener('mousedown', () => {
-                    if (w.style.zIndex != biggestzindex || biggestzindex === 0) {
-                        biggestzindex += 1;
-                        w.style.zIndex = biggestzindex;
-                    }
-                })
-            }
-            
-            
-            const titlebars = $('.windowdrag');
-            var currentbarheld = null;
-            var startmousedrag = [0, 0];
-            var starteledrag = [0, 0];
-            var overwrite = false;
-            
-            for (let titlebar of titlebars) {
-                console.log(titlebar)
-                
-                titlebar.addEventListener('mousedown', () => {
-                    if (!currentbarheld) {
-                        currentbarheld = titlebar;
-                        startmousedrag = [mouse_coords[0], mouse_coords[1]];
-                        starteledrag = [titlebar.parentElement.parentElement.offsetLeft, titlebar.parentElement.parentElement.offsetTop]
-                        titlebar.style.cursor = 'grabbing';
-                        document.body.style.cursor = 'grabbing';
-                        titlebar.parentElement.parentElement.style.boxShadow = '5px 5px 12px #00000090';
-                    }
-                })
-            }
-            addEventListener('mouseup', () => {
+            addEventListener('mouseup', () => { // ANYTHING WITH MOUSEUP
                 if (currentbarheld) {
                     for (let titlebar of titlebars) {
                         titlebar.style.cursor = 'grab';
@@ -448,12 +478,68 @@
                     currentbarheld = null;
                 }
                 mbox_enabled = false;
+                actually_dragging = false;
+                if (icondrag) {
+                    icondrag = false;
+                    for (let clone of clonecontainer.children) {
+                        clone.origin.style.top = clone.style.top;
+                        clone.origin.style.left = clone.style.left;
+                    }
+                    clonecontainer.innerHTML = '';
+                    update_icon_positions();
+                }
+                selectedicons.forEach(e => {
+                    e.dragging = null;
+                })
                 mousebox.style.display = 'none';
             })
+            addEventListener('keydown', (e) => { // ANYTHING WITH KEYDOWN
+                console.log(e.key);
+                if (e.key === 'Enter') {
+                    for (let button of selectedicons) {
+                        open_window(button);
+                    }
+                }
+            })
+
+
             
-            const buttoncontainers = $('.windowbuttoncontainer');
+            const windows = document.getElementsByClassName('window');
+            var biggestzindex = -1;
+            for (let w of windows) { // WINDOW INITIALIZER
+                w.style.display = 'none';
+                w.style.opacity = '0';
+                w.style.filter = 'contrast(0.5)';
+                w.style.transform = 'scale(0.95)';
+
+                w.style.top = `${Math.random() * (innerHeight - 400)}px`;
+                w.style.left = `${Math.random() * (innerWidth - 750)}px`;
+                
+                w.addEventListener('mousedown', () => {
+                    if (w.style.zIndex != biggestzindex || biggestzindex === 0) {
+                        biggestzindex += 1;
+                        w.style.zIndex = biggestzindex;
+                    }
+                })
+            }
+            
+            for (let titlebar of titlebars) { // TITLEBAR MOUSEDOWN DETECTION
+                console.log(titlebar)
+                
+                titlebar.addEventListener('mousedown', () => {
+                    if (!currentbarheld) {
+                        currentbarheld = titlebar;
+                        starteledrag = [titlebar.parentElement.parentElement.offsetLeft, titlebar.parentElement.parentElement.offsetTop]
+                        titlebar.style.cursor = 'grabbing';
+                        document.body.style.cursor = 'grabbing';
+                        titlebar.parentElement.parentElement.style.boxShadow = '5px 5px 12px #00000090';
+                    }
+                })
+            }
+            
+            const buttoncontainers = document.getElementsByClassName('windowbuttoncontainer');
             for (let bc of buttoncontainers) {
-                bc.getElementsByClassName('close')[0].addEventListener('click', () => {
+                bc.getElementsByClassName('close')[0].addEventListener('click', () => { // CLOSING WINDOW
                     const w = bc.parentElement.parentElement;
                     w.style.opacity = '0';
                     w.style.filter = 'contrast(0.5)';
@@ -465,8 +551,9 @@
             }
             
             for (let button of desktopbuttons) {
-                button.addEventListener('mousedown', () => {
+                button.addEventListener('mousedown', () => { // ICON CLICK/DRAG DETECTION
                     var is_in = false;
+                    icondrag = true;
                     for (let otherbutton of selectedicons) {
                         if (otherbutton === button) {
                             is_in = true;
@@ -480,16 +567,11 @@
                         selectedicons = [button]
                     }
                     button.className = 'clickedbutton';
-                    if (button.ready) {
+                    if (button.cancel) {
+                        button.cancel = null;
+                    } else if (button.ready) {
                         button.ready = null;
-                        console.log(button.getAttribute('thing'))
-                        const w = $('#' + button.getAttribute('thing'));
-                        w.style.display = 'block';
-                        setTimeout(() => {
-                            w.style.opacity = '1';
-                            w.style.filter = 'contrast(1)';
-                            w.style.transform = 'scale(1)';
-                        }, 1)
+                        open_window(button);
                     } else {
                         button.ready = true;
                         setTimeout(() => {
@@ -498,8 +580,8 @@
                     }
                 })
             }
-            const background = $('#background');
-            background.addEventListener('mousedown', () => {
+            const background = document.getElementById('background');
+            background.addEventListener('mousedown', () => { // LOSE FOCUS ON DESKTOP BACKGROUND
                 for (let otherbutton of selectedicons) {
                     otherbutton.className = ''
                 }
@@ -513,7 +595,7 @@
             })
 
             
-            function frame() {
+            function frame() { // RUNS PER FRAME
                 requestAnimationFrame(frame);
                 if (currentbarheld) {
                     currentbarheld.parentElement.parentElement.style.left = (mouse_coords[0] + starteledrag[0]) - startmousedrag[0] + 'px';
